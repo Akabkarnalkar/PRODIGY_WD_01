@@ -1,0 +1,307 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: serif;
+}
+
+nav {
+    background: indianred;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+}
+
+label.logo {
+    color: whitesmoke;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: whitesmoke;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+a.active,
+a:hover {
+    background: whitesmoke;
+    transition: .5s;
+    color: indianred;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: whitesmoke;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+
+
+/*Home section*/
+#home {
+    background: url(bg1.png) no-repeat;
+    background-size: cover;
+    height: 705px;
+    align-items: center;
+}
+
+.main {
+    min-width: 650px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: brown;
+}
+
+.main span {
+    font-size: 25px;
+    letter-spacing: 5px;
+}
+
+.main h1 {
+    font-size: 3.5rem;
+}
+
+#btn {
+    background-color: indianred;
+    color: whitesmoke;
+    padding: 5px 15px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+#btn:hover {
+
+    box-shadow: 0px 0px 15px 2px black;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+
+/*About Section*/
+
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    overflow: hidden;
+    background: rgb(248, 189, 199);
+}
+
+#about h1 {
+    margin: 10px;
+    padding: 10px;
+    font-size: 40px;
+    color: brown;
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 400px;
+    width: 300px;
+    margin: 50px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+}
+
+img {
+    height: 400px;
+    width: 300px;
+    border-radius: 3px;
+}
+
+.intro {
+    height: 70px;
+    width: 300px;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: -546px;
+    background: rgb(27, 27, 27, .5);
+    color: whitesmoke;
+    transition: .5s ease;
+}
+
+h2 {
+    margin: 10px;
+    font-size: 40px;
+}
+
+p {
+    margin: 20px;
+    font-size: 20px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover .intro {
+    height: 220px;
+    bottom: -546px;
+    background: wheat;
+    color: black;
+}
+
+.card:hover p {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+/*Footer*/
+footer {
+    background: indianred;
+    height: 30px;
+    width: 100%;
+}
+
+footer marquee {
+    color: whitesmoke;
+}
+
+
+
+/*Media Querry*/
+
+@media (min-width:320px) and (max-width:767px) {
+
+    label.logo {
+        font-size: 30px;
+        padding: 0 16px;
+    }
+
+    .main {
+        min-width: 300px;
+        /*  visibility: hidden;*/
+    }
+
+    .main a {
+        padding: 7px 12px;
+    }
+
+    nav #check:checked~.main {
+        visibility: hidden;
+        overflow: hidden;
+    }
+
+    #about {
+        height: 2000px;
+    }
+
+    .card {
+        height: 200px;
+        width: 100px;
+    }
+
+}
+
+
+
+@media(max-width:1023px) {
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #385634;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: indianred;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+
+    #check:checked~h1 {
+        visibility: hidden;
+        overflow: hidden;
+    }
+
+    .card {
+        height: 300px;
+        width: 230px;
+    }
+
+    .intro {
+        height: 70px;
+        width: 200px;
+        overflow: hidden;
+    }
+}
+
+
+
+@media(min-width:1024px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
